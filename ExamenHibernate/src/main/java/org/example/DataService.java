@@ -13,14 +13,17 @@ public class DataService {
         this.opinionRepository = opinionRepository;
     }
 
+
     public Pelicula registrarNuevaPelicula(String titulo) {
         Pelicula nuevaPelicula = new Pelicula(titulo);
         return peliculaRepository.save(nuevaPelicula);
     }
 
+
     public List<Opinion> obtenerOpinionesPorUsuario(String email) {
         return opinionRepository.findByUsuarioEmail(email);
     }
+
 
     public Optional<Opinion> anadirOpinionAPelicula(Long peliculaId, String email, int puntuacion, String descripcion) {
 
